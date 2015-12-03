@@ -1,0 +1,345 @@
+@media all and (min-width:701px) and (max-width:900px){
+
+    header{
+        @include widthCalc(7);
+        min-height: 8rem;
+
+        &:before,
+        &:after{
+            width:230px;
+        }
+        h1{
+            width: 100%;
+            color: $dark_brown;
+
+            i.fa-lg{
+                display:inline;
+                color: $dark_brown;
+                vertical-align:baseline;
+                float:none;
+                font-size: 4rem;
+                @include heightCalc(1);
+            }
+            i.fa-lg ~ span{
+                float: none;
+                letter-spacing: 0.25rem;
+                font-size: $xlFontSize;
+                text-align: left;
+            }
+        }
+        nav{
+            position: static;
+            clear:both;
+            width: 100%;
+            padding: 0;
+        }
+        nav>ul>li{
+            width:20%;
+            float: left;
+        }
+        nav>ul>li>a{
+            font-size: 1rem;
+            line-height: 2rem;
+            min-height: 6rem;
+            border:none;
+            border-left:1px solid $light_grey; 
+            padding:1.0rem;
+            background-color: $white;
+
+            &:last-child{
+                border-right:1px solid $light_grey;
+            }
+        }
+    }
+    section.focal, 
+    section.content1,
+    section.content2,
+    footer{
+        @include widthCalc(7);    
+    }
+    .col-4{
+        width:50%;
+        float:left;
+    }
+    section.content2{
+        h4, li{
+            font-size: $smallFontSize;
+        }
+    }
+    footer{
+        .fa-circle{
+            color: $med_blue;
+        }
+        .col-2:last-child{
+            unicode-bidi: bidi-override;
+            direction: rtl;
+        }
+        h4[lang=ar]{
+           display:block;
+        }
+        h4:not([lang=ar]){
+            display:none;
+        }
+    }
+}
+
+
+@media all and (min-width:901px) and (max-width: 1400px){
+    header:before,
+    header:after{
+        width:300px;
+    }
+
+    header{
+        @include widthCalc(9);
+
+        h1{
+            width: 100%;
+            color: $dark_blue;
+
+            i.fa-lg{
+                display:inline;
+                color: $dark_blue;
+                vertical-align:baseline;
+                float:none;
+                font-size: 4rem;
+                @include heightCalc(1);
+            }
+            i.fa-lg ~ span{
+                float: none;
+                letter-spacing: 0.25rem;
+                font-size: $xlFontSize;
+                text-align: left;
+            }
+        }
+        nav{
+            position: static;
+            clear:both;
+            width: 100%;
+            padding: 0;
+        }
+        nav>ul>li{
+            width:20%;
+            float: left;
+            background-color: $white;
+        }
+        nav>ul>li:first-child{
+            a{
+                border-left:none;
+            }
+        }
+        nav>ul>li>a{
+            font-size: 1rem;
+            line-height: 2rem;
+            min-height: 2rem;
+            border:none;
+            border-left:1px solid $light_grey; 
+            padding: 0 1.0rem;
+            margin: 1.0rem 0;
+            background-color: $white;
+        }
+    }
+
+    section.focal, 
+    section.content1,
+    section.content2,
+    footer{
+        @include widthCalc(9);  
+    }
+    section.focal{
+        h2, p.author{
+            @include widthCalc(6);
+        }
+    }
+    .col-3{
+        float:left;
+        width: 30%;
+        margin-left: 5%;
+        
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+    .col-4{
+        width:22%;
+        margin-left: 4%;
+        float:left;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+    section.content1{
+        h3{
+            font-size: $medFontSize;
+            font-weight: 100;
+
+            .fa-2x{
+                font-size: $medFontSize;
+                padding-right: 1rem;
+            }
+        }
+    }
+    
+    section.content2{
+        h4, li{
+            font-size: $smallFontSize;
+        }
+        p{
+            font-size: 1rem;
+            font-weight: 400;
+        }
+    }
+    footer{
+        .fa-circle{
+            color: $light_brown;
+        }
+        h4[lang=ru]{
+           display:block; 
+        }
+        h4:not([lang=ru]){
+            display:none;
+        }
+    }
+}
+
+
+@media all and (min-width:1401px){
+    
+    header{
+        @include widthCalc(14);
+
+        &:before,
+        &:after{
+            width:450px;
+        }
+        h1{
+            width: 100%;
+            color: $dark_brown;
+
+            i.fa-lg{
+                display:inline;
+                color: $dark_brown;
+                vertical-align:baseline;
+                float:none;
+                font-size: 4rem;
+                @include heightCalc(1);
+            }
+            i.fa-lg ~ span{
+                float: none;
+                letter-spacing: 0.25rem;
+                font-size: $xlFontSize;
+                text-align: left;
+            }
+        }
+
+        nav{
+            position: static;
+            clear:both;
+            width: 100%;
+            padding: 0;
+    
+            &>ul>li{
+                width:20%;
+                float: left;
+                background-color: $white;
+            
+                &:first-child{
+                    a{
+                        border-left:none;
+                    }
+                }
+
+                &>a{
+                    font-size: $smallFontSize;
+                    line-height: 2rem;
+                    min-height: 2rem;
+                    border:none;
+                    border-left:1px solid $light_grey; 
+                    padding:0 1.0rem;
+                    margin:1.0rem 0;
+                    background-color: $white;
+                }
+            }
+        }
+    }
+
+    p {
+        section.content2 &, footer &{
+            font-size: $smallFontSize;
+        }
+    }
+    section.focal, 
+    section.content1,
+    section.content2,
+    footer{
+        @include widthCalc(14);
+    }
+    section.focal{
+        p.author{
+            @include widthCalc(6);
+        }
+        h2{
+            @include widthCalc(6){
+                font-size: $xlFontSize;
+            }
+        }
+    }
+    .col-3{
+        float:left;
+        width: 30%;
+        margin-left: 5%;
+        
+        &:first-child{
+            margin-left: 0;
+        }
+    }
+    .col-4{
+        width:22%;
+        margin-left: 4%;
+        float:left;
+        
+        &:first-child{
+            margin-left: 0;
+        }
+    }
+    section.content1{
+        h3{
+            font-size: $largeFontSize;
+            font-weight: 100;
+        
+            .fa-2x{
+                font-size: $largeFontSize;
+                padding-right: 1rem;
+                vertical-align: middle;
+            }
+        }
+    }
+    
+    section.content2{
+        h4, li{
+            font-size: $medFontSize;
+        }
+        p{
+            font-weight: 400;
+        }
+    }
+    footer{
+        p{
+            letter-spacing: 0.2rem;
+        
+            &:last-child{
+                color: $light_grey;
+            }
+        }
+        .fa-circle{
+            color: $med_blue;
+        }
+        h4[lang=en]{
+           display:block; 
+        }
+        h4:not([lang=en]){
+            display:none;
+        }
+    }
+}

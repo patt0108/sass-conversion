@@ -1,0 +1,9 @@
+@mixin heightCalc($x){
+    line-height: $xlFontSize * $lineHeight * $x;
+}
+
+@mixin widthCalc($x){
+    width: $x * 100px;
+    margin: 0 auto;
+    @content;
+}

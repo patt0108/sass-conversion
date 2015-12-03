@@ -1,1 +1,263 @@
-// main SASS file
+/***********************************************
+                DEFAULTS
+***********************************************/
+@import 'sass-partials/_variables.scss';
+@import 'sass-partials/_mixins.scss';
+
+*{
+    padding:0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    &:after,
+    &:before{
+        -webkit-box-sizing: inherit;
+        box-sizing: inherit;
+    }
+}
+html{
+    font-size: 16px;
+    font-family: 'Josefin Sans', 'Trebuchet MS', Helvetica, sans-serif; /* default for whole page */
+    line-height: $lineHeight;
+}
+h1{
+    font-family: Cardo, 'Palatino Linotype', 'Book Antiqua', Palatino, serif; /* serif for the headings */
+}
+h2, h3, h4{
+    @expand h1;
+}
+ul{
+    list-style: none;
+}
+/***********************************************
+                SPECIAL
+***********************************************/
+
+.clearfix:after{
+    display:table;
+    clear: both;
+    content: "";
+}
+
+/***********************************************
+                LAYOUT
+***********************************************/
+.bg-header{
+    background-color: $white;
+    background-color:$light_blue;
+    color: $dark_grey;
+    border-bottom:1rem solid $med_blue;
+    border-top:1rem solid $dark_blue;
+    position: relative;
+
+    &:before,
+    &:after{
+        content:"";
+        position:absolute;
+        bottom:-1rem;
+        width:30%;
+        height:1rem;
+        background-color: $dark_blue;
+    }
+    &:before{
+        left:0;
+    }
+    &:after{
+        right:0;
+    }
+}
+.bg-focal{
+    background-color: $light_brown;
+    color: $dark_brown;
+}
+.bg-content1{
+    background-color: $white;
+    color: $dark_grey;
+}
+.bg-content2{
+    background-color: $light_blue;
+    color: $dark_blue;
+}
+.bg-footer{
+    background-color: $white;
+    color: $light_grey;
+}
+header{
+    width: 400px; /* default */
+    margin: 0 auto;
+    position: relative;
+
+    h1{
+        width: 100%;
+        padding: 0 2rem;
+    }
+
+    nav{
+        width: 100%;
+    
+        &>ul{
+            li{
+                width:100%;
+                float: none;
+            }
+        }
+    }
+}
+
+section.focal{
+    width: 400px; /* default */
+    margin: 0 auto;
+}
+section.content1, section.content2{
+    padding:2rem 0;    
+}
+.row{
+    clear: both;
+}
+.col-2{
+    width:50%;
+    float:left;
+    padding-bottom: 2rem;
+    border-left:1px solid $dark_blue;
+    margin-bottom: 2rem;
+}
+footer{
+    padding:2rem 0;
+
+    .col-2:first-child{
+        border-left: 0;
+    }
+}
+
+/***********************************************
+                NAVIGATION
+***********************************************/
+header{
+    nav{
+        padding:2rem 0;
+        clear: both;
+    
+        &>ul>li>a{
+            display:block;
+            text-align: center;
+            text-decoration: none;
+            color: $dark_grey;    
+            font-size: $smallFontSize;
+            letter-spacing: 0.25rem;
+            border:1px solid $light_grey; 
+            border-bottom: none;
+            padding:1.0rem 2rem;
+            line-height: 1;
+            background-color: $white;
+
+            &:hover{
+                font-weight: 700;
+                color:$dark_brown;
+            }
+        }
+    }
+
+/***********************************************
+                CONTENT
+***********************************************/
+
+    h1{
+        color: $dark_brown;
+        letter-spacing: 0.1rem;
+
+        i.fa-lg{
+            display:block;
+            width: 25%;
+            float:left;
+            font-size: 7rem;
+            @include heightCalc(2);
+            color: $light_brown;
+
+            & ~ span{
+                float: right;
+                width: 75%;
+                font-size: $xlFontSize;
+                padding-left: 1rem;
+                text-align: right;
+            }
+        }
+    }
+}
+.focal{
+    h2{
+        font-size: $medFontSize;
+        line-height: 1.2;
+        padding: 2rem 2rem 1rem 2rem;
+    }
+    .author{
+        font-size: 1rem;
+        padding: 0.2rem 2rem 2rem;
+    }
+}
+h3{
+    .content1 &, .content2 &{
+        font-size:$medFontSize;
+    }
+}
+p{
+    .content1 &, .content2 &{
+        font-size: $smallFontSize;
+    }
+}
+.content1{
+    h3{
+        padding: 0.2rem 2rem 2rem;
+
+        i{
+            vertical-align:middle;
+            padding-right: 2rem;
+        }
+    }
+    p{
+        padding: 0.5rem 2rem 2rem;
+    }
+}
+.content2{
+    h3{
+        padding: 1rem 2rem 0.5rem;
+    }
+    h4{
+        font-size: $medFontSize;
+        padding: 1rem 2rem 0rem;
+    }
+    p{
+        padding: 0.5rem 2rem 1rem;
+    }
+    li{
+        font-size: $smallFontSize;
+        padding: 0.5rem 2rem;
+    }
+}
+/***********************************************
+                FOOTER
+***********************************************/
+footer{
+    h4, p{
+        padding: 0.5rem 2rem;
+    }
+    h4{
+        font-size: $smallFontSize;
+        color: $dark_brown;
+    }
+    p{
+        font-size: 1rem;
+        color: $dark_grey;
+    }
+    .fa-circle{
+        color: $dark_grey;
+    }
+    h4[lang=de]{
+       display:block;
+    }
+    h4:not([lang=de]){
+        display:none;
+    }
+}
+
+@import 'sass-partials/_queries.scss';
